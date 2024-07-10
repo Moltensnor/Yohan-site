@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yohan Blair - Satorische Doeleinden</title>
+    <title>Yohan is King</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -76,27 +76,25 @@
 <body>
     <header>
         <h1>Yohan Blair</h1>
-        <p>Internationale drugsbaas, professioneel league speler en de beste gambler ooit</p>
+        <p>International Drug Lord, Professional League Player, and the Best Gambler Ever</p>
     </header>
     <section>
         <h2>Call Yohan</h2>
         <form id="qualifyForm" onsubmit="return checkQualification()">
             <div id="question1">
-                <label for="qualification">Waarom denk je dat je Yohan zou mogen bellen? (Spoiler: je bent het niet waard)</label><br>
+                <label for="qualification">Why do you think you should be allowed to call Yohan? (Spoiler: you are not worthy)</label><br>
                 <input type="text" id="qualification" name="qualification" required><br>
-                <input type="button" value="Volgende" onclick="showNextQuestion()">
+                <input type="button" value="Next" onclick="showNextQuestion()">
             </div>
             <div id="question2" class="hidden">
-                <label for="rank">Welke rank ben je in League?</label><br>
+                <label for="rank">What is your rank in League?</label><br>
                 <input type="text" id="rank" name="rank" required><br>
                 <input type="submit" value="Test Qualification">
             </div>
         </form>
         <p id="result"></p>
     </section>
-    <div class="hidden">
-        <iframe id="youtubePlayer" width="0" height="0" src="https://www.youtube.com/embed/r-x8S-QTVIw?autoplay=1&mute=1" allow="autoplay"></iframe>
-    </div>
+    <audio id="backgroundMusic" src="audio/The Alchemist - I Hate Everything feat. Action Bronson.mp3" type="audio/mpeg" autoplay loop></audio>
     <script>
         function showNextQuestion() {
             document.getElementById('question1').style.display = 'none';
@@ -105,13 +103,13 @@
 
         function checkQualification() {
             var result = document.getElementById('result');
-            result.textContent = "Sorry, je bent een disgusting pisslow en je zou nooit zo goed kunnen zijn als Yohan. Probeer maar weer.";
+            result.textContent = "Sorry, you are a disgusting pisslow and you could never be as good as Yohan. Try again.";
             return false; // Prevent form submission
         }
 
         window.onload = function() {
-            var player = document.getElementById('youtubePlayer');
-            player.src += "&autoplay=1";
+            var audio = document.getElementById('backgroundMusic');
+            audio.play();
         }
     </script>
 </body>
