@@ -1,116 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yohan is King</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
-        body {
-            font-family: 'Press Start 2P', cursive;
-            background-color: #0D0221;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+      body {
+        font-family: "Press Start 2P", cursive;
+        background-color: #0d0221;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+      }
+      header {
+        background-color: #2c003e;
+        width: 100%;
+        padding: 20px 0;
+      }
+      section {
+        margin: 20px;
+        padding: 20px;
+        background-color: #32006e;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        position: relative;
+        animation: shake 0.5s infinite;
+      }
+      section:hover {
+        animation: none;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      input[type="text"],
+      input[type="submit"],
+      input[type="button"] {
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+      }
+      input[type="text"] {
+        width: 80%;
+      }
+      input[type="submit"],
+      input[type="button"] {
+        background-color: #2c003e;
+        color: #fff;
+        cursor: pointer;
+      }
+      @keyframes shake {
+        0% {
+          transform: translate(1px, 1px) rotate(0deg);
         }
-        header {
-            background-color: #2C003E;
-            width: 100%;
-            padding: 20px 0;
+        10% {
+          transform: translate(-1px, -1px) rotate(-1deg);
         }
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #32006E;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-            position: relative;
-            animation: shake 0.5s infinite;
+        20% {
+          transform: translate(-2px, 0px) rotate(1deg);
         }
-        section:hover {
-            animation: none;
+        30% {
+          transform: translate(2px, 1px) rotate(0deg);
         }
-        h1, h2 {
-            margin: 0;
+        40% {
+          transform: translate(1px, -1px) rotate(1deg);
         }
-        input[type="text"], input[type="submit"], input[type="button"] {
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
+        50% {
+          transform: translate(-1px, 1px) rotate(-1deg);
         }
-        input[type="text"] {
-            width: 80%;
+        60% {
+          transform: translate(-2px, 1px) rotate(0deg);
         }
-        input[type="submit"], input[type="button"] {
-            background-color: #2C003E;
-            color: #fff;
-            cursor: pointer;
+        70% {
+          transform: translate(2px, 0px) rotate(-1deg);
         }
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -1px) rotate(-1deg); }
-            20% { transform: translate(-2px, 0px) rotate(1deg); }
-            30% { transform: translate(2px, 1px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 1px) rotate(-1deg); }
-            60% { transform: translate(-2px, 1px) rotate(0deg); }
-            70% { transform: translate(2px, 0px) rotate(-1deg); }
-            80% { transform: translate(1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 1px) rotate(0deg); }
-            100% { transform: translate(0px, -1px) rotate(-1deg); }
+        80% {
+          transform: translate(1px, -1px) rotate(1deg);
         }
-        .hidden {
-            display: none;
+        90% {
+          transform: translate(1px, 1px) rotate(0deg);
         }
+        100% {
+          transform: translate(0px, -1px) rotate(-1deg);
+        }
+      }
+      .hidden {
+        display: none;
+      }
     </style>
-</head>
-<body>
+    <script>
+      function playAudio() {
+        var audio = document.getElementById("backgroundMusic");
+        audio.play();
+      }
+    </script>
+  </head>
+  <body>
     <header>
-        <h1>Yohan Blair</h1>
-        <p>International Drug Lord, Professional League Player, and the Best Gambler Ever</p>
+      <h1>Yohan Blair</h1>
+      <p>
+        International Drug Lord, Professional League Player, and the Best
+        Gambler Ever
+      </p>
     </header>
     <section>
-        <h2>Call Yohan</h2>
-        <form id="qualifyForm" onsubmit="return checkQualification()">
-            <div id="question1">
-                <label for="qualification">Why do you think you should be allowed to call Yohan? (Spoiler: you are not worthy)</label><br>
-                <input type="text" id="qualification" name="qualification" required><br>
-                <input type="button" value="Next" onclick="showNextQuestion()">
-            </div>
-            <div id="question2" class="hidden">
-                <label for="rank">What is your rank in League?</label><br>
-                <input type="text" id="rank" name="rank" required><br>
-                <input type="submit" value="Test Qualification">
-            </div>
-        </form>
-        <p id="result"></p>
+      <h2>Call Yohan</h2>
+      <form id="qualifyForm" onsubmit="return checkQualification()">
+        <div id="question1">
+          <label for="qualification"
+            >Why do you think you should be allowed to call Yohan? (Spoiler: you
+            are not worthy)</label
+          ><br />
+          <input
+            type="text"
+            id="qualification"
+            name="qualification"
+            onfocus="playAudio()"
+            required
+          /><br />
+          <input type="button" value="Next" onclick="showNextQuestion()" />
+        </div>
+        <div id="question2" class="hidden">
+          <label for="rank">What is your rank in League?</label><br />
+          <input type="text" id="rank" name="rank" required /><br />
+          <input type="submit" value="Test Qualification" />
+        </div>
+      </form>
+      <p id="result"></p>
     </section>
-    <audio id="backgroundMusic" src="audio/The Alchemist - I Hate Everything feat. Action Bronson.mp3" type="audio/mpeg" autoplay loop></audio>
+    <audio
+      id="backgroundMusic"
+      src="The Alchemist - I Hate Everything feat. Action Bronson.mp3"
+      type="audio/mp3"
+      autoplay
+      loop
+    ></audio>
     <script>
-        function showNextQuestion() {
-            document.getElementById('question1').style.display = 'none';
-            document.getElementById('question2').style.display = 'block';
-        }
+      function showNextQuestion() {
+        document.getElementById("question1").style.display = "none";
+        document.getElementById("question2").style.display = "block";
+      }
 
-        function checkQualification() {
-            var result = document.getElementById('result');
-            result.textContent = "Sorry, you are a disgusting pisslow and you could never be as good as Yohan. Try again.";
-            return false; // Prevent form submission
-        }
+      function checkQualification() {
+        var result = document.getElementById("result");
+        result.textContent =
+          "Sorry, you are a disgusting pisslow and you could never be as good as Yohan. Try again.";
+        return false; // Prevent form submission
+      }
 
-        window.onload = function() {
-            var audio = document.getElementById('backgroundMusic');
-            audio.play();
-        }
+      window.onload = function () {
+        var audio = document.getElementById("backgroundMusic");
+        audio.play();
+      };
     </script>
-</body>
+  </body>
 </html>
